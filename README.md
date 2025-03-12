@@ -1,5 +1,9 @@
 # Introduction
-This is a boilerplate plugin.
+Foward notifications to E-Mail.<br >
+Multiple receipts can be defined.
+
+> [!IMPORTANT] 
+> Dont forget to configure the SMPT Server & credentials
 
 # Installation
 1) Create a new plugin over the OpenHaus backend HTTP API
@@ -11,23 +15,17 @@ Add plugin item via HTTP API:<br />
 [PUT] `http://{{HOST}}:{{PORT}}/api/plugins/`
 ```json
 {
-   "name":"Plugin Boilerplate",
-   "version":1,
+   "name":"oh-plg-smtp-sender",
+   "version": "1.0.0",
    "intents":[
-      "devices",
-      "endpoints",
-      "plugins",
-      "rooms",
-      "ssdp",
       "store",
-      "users",
       "vault"
    ],
-   "uuid": "00000000-0000-0000-0000-000000000000"
+   "uuid": "bc9b8757-be61-4f23-bfaa-1d0a0b61d1c5"
 }
-
 ```
+
 Mount the source code into the backend plugins folder
 ```sh
-sudo mount --bind ~/projects/OpenHaus/plugins/plugin-boilerplate/ ~/projects/OpenHaus/backend/plugins/00000000-0000-0000-0000-000000000000/
+sudo mount --bind ~/projects/OpenHaus/plugins/oh-plg-smtp-sender/ ~/projects/OpenHaus/backend/plugins/bc9b8757-be61-4f23-bfaa-1d0a0b61d1c5/
 ```
